@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2023 at 05:07 PM
+-- Generation Time: Aug 25, 2023 at 12:08 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `shoping_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `all_product`
+--
+
+CREATE TABLE `all_product` (
+  `image` varchar(50) NOT NULL,
+  `product_name` varchar(50) NOT NULL,
+  `price` varchar(30) NOT NULL,
+  `product_code` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `all_product`
+--
+
+INSERT INTO `all_product` (`image`, `product_name`, `price`, `product_code`) VALUES
+('image/nike_retro1.jpg', 'nike retro1', '2500', 'H001'),
+('image/nike_retro2.jpg', 'nike retro2', '2500', 'H002'),
+('image/nike_retro3.jpg', 'nike retro3', '3000', 'H003'),
+('image/nike_retro4.jpg', 'nike retro4', '3000', 'H004'),
+('image/nike_retro5.jpg', 'nike retro5', '3000', 'H005'),
+('image/nike_retro6.jpg', 'nike retro6', '3000', 'H006'),
+('image/nike_retro7.jpg', 'nike retro7', '3200', 'H007'),
+('image/nike_retro8.jpg', 'nike retro8', '4000', 'H008');
 
 -- --------------------------------------------------------
 
@@ -96,6 +123,12 @@ INSERT INTO `register_data` (`frstname`, `lstname`, `email`, `user_id`, `passwor
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `all_product`
+--
+ALTER TABLE `all_product`
+  ADD PRIMARY KEY (`product_code`);
 
 --
 -- Indexes for table `best`
