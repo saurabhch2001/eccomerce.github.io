@@ -2,7 +2,7 @@
 
 session_start();
 
-$conn = mysqli_connect("localhost", "root", "", "shoping_db");
+$conn = mysqli_connect("localhost", "root", "password_db", "shoping_db");
 
 $query = "select * from all_product";
 $result = mysqli_query($conn, $query);
@@ -83,7 +83,7 @@ if (isset($_POST['wishlist'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
+  <link rel="icon" type="image/x-icon" href="logo_.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -138,6 +138,71 @@ if (isset($_POST['wishlist'])) {
 
       animation: slideDown 0.35s ease-out;
     }
+    
+    
+    .product-grid {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+    }
+
+    .product-grid .product-image {
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-grid .product-image a.image {
+      display: block;
+    }
+
+    .product-grid .product-image img {
+      width: 100%;
+      height: auto;
+    }
+
+
+
+    .product-grid .product-links {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      position: absolute;
+      top: 10px;
+      right: -50px;
+      transition: all .5s ease 0s;
+    }
+
+    .product-grid:hover .product-links {
+      right: 10px;
+    }
+
+    .product-grid .product-links li {
+
+      display: block;
+      transition: all 0.3s;
+    }
+
+
+    .product-grid .title {
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: capitalize;
+      margin: 0 0 7px;
+    }
+
+
+
+
+
+
+
+    .product-grid .price {
+      color: #0d0d0d;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    
 
 
     @media only screen and (max-width: 768px) {
@@ -174,39 +239,7 @@ if (isset($_POST['wishlist'])) {
 
     }
 
-    input[type=text],
-    input[type=email],
-    select,
-    textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-top: 6px;
-      margin-bottom: 16px;
-      resize: vertical;
-    }
-
-    input[type=submit] {
-      background-color: #51C8EC;
-
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    input[type=submit]:hover {
-      background-color: #40a0bd;
-
-    }
-
-    .content {
-
-      background-image: url(contact-bg.jpg);
-    }
+   
   </style>
 
 </head>
@@ -246,10 +279,10 @@ if (isset($_POST['wishlist'])) {
             <a class="nav-link mx-2 text-uppercase " aria-current="page" href="index.php">Home</a>
           </li>
           <li class="n nav-item">
-            <a class="nav-link mx-2 text-uppercase " href="contact.php">Product</a>
+            <a class="nav-link mx-2 text-uppercase  active" href="product.php">Product</a>
           </li>
           <li class="n nav-item">
-            <a class="nav-link mx-2 text-uppercase active" href="about.php">About</a>
+            <a class="nav-link mx-2 text-uppercase " href="about.php">About</a>
           </li>
 
           <li class="n nav-item">
@@ -274,11 +307,18 @@ if (isset($_POST['wishlist'])) {
   <!-- carousel end -->
 
   <!-- content -->
+  
+ 
+  
 
   <div class="container-fluid p-5 ">
+ 
+  <h1 class=" mt-3"> Product</h1>
+  <hr class="w-25">
 
-<h1 class=" mt-3">Featured Product</h1>
-<hr class="w-25">
+ 
+
+ 
 <div class="row mt-5">
   <?php
   while ($row = mysqli_fetch_array($result)) {

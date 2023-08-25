@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+?>
+
+
+
+
 <!doctype html>
 <html>
 
@@ -7,7 +16,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
+  <link rel="icon" type="image/x-icon" href="logo_.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -153,13 +162,13 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav mx-auto">
             <li class="n nav-item">
-              <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="index.php">Home</a>
+              <a class="nav-link mx-2 text-uppercase " aria-current="page" href="index.php">Home</a>
             </li>
             <li class="n nav-item">
-              <a class="nav-link mx-2 text-uppercase " href="contact.php">Product</a>
+            <a class="nav-link mx-2 text-uppercase   " href="product.php">Product</a>
             </li>
             <li class="n nav-item">
-              <a class="nav-link mx-2 text-uppercase " href="about.php">About</a>
+              <a class="nav-link mx-2 text-uppercase active" href="about.php">About</a>
             </li>
   
             <li class="n nav-item">
