@@ -2,7 +2,7 @@
 
 session_start();
 
-$conn = mysqli_connect("localhost", "root", "password_db", "shoping_db");
+$conn = mysqli_connect("bjwsqeyqnceuefhonbtn-mysql.services.clever-cloud.com", "uw73jydcez11n8fc", "qW2AINujY6DksIor1mtP", "bjwsqeyqnceuefhonbtn");
 
 $query = "select * from all_product";
 $result = mysqli_query($conn, $query);

@@ -17,7 +17,7 @@ if (isset($_POST["reset_password"])) {
   $password = $_POST["password"];
   $new_password = $_POST["new-password"];
 
-  $conn = mysqli_connect("localhost", "root", "password_db", "shoping_db") or die("you are not connected");
+  $conn = mysqli_connect("bjwsqeyqnceuefhonbtn-mysql.services.clever-cloud.com", "uw73jydcez11n8fc", "qW2AINujY6DksIor1mtP", "bjwsqeyqnceuefhonbtn") or die("you are not connected");
   $query = "update register_data set password='$new_password' where  password='$password' AND email='$email'";
   mysqli_query($conn, $query);
 }
@@ -31,7 +31,7 @@ if (isset($_POST["save_changes"])) {
   $username = $_POST["username"];
   $address = $_POST["address"];
 
-  $conn = mysqli_connect("localhost", "root", "password_db", "shoping_db") or die("you are not connected");
+  $conn = mysqli_connect("bjwsqeyqnceuefhonbtn-mysql.services.clever-cloud.com", "uw73jydcez11n8fc", "qW2AINujY6DksIor1mtP", "bjwsqeyqnceuefhonbtn") or die("you are not connected");
   $query = "update register_data set frstname='$frstname', lstname='$lstname', email='$email2',
    user_id='$username',contact='$contact',`address`='$address' where  password='$pass' ";
   mysqli_query($conn, $query);

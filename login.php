@@ -14,7 +14,7 @@ if (isset($_POST["register"])) {
 
 
 
-    $conn = mysqli_connect("localhost", "root", "password_db", "shoping_db");
+    $conn = mysqli_connect("bjwsqeyqnceuefhonbtn-mysql.services.clever-cloud.com", "uw73jydcez11n8fc", "qW2AINujY6DksIor1mtP", "bjwsqeyqnceuefhonbtn");
    $query = "INSERT INTO `register_data` (frstname , lstname, email, user_id, password, contact, address) 
    VALUES ('$fname', '$lname', '$email', '$user', '$pass', '$contact', '$address')";
 
@@ -38,7 +38,7 @@ if (isset($_POST["login"])) {
 
 
 
-    $conn = mysqli_connect("localhost", "root", "password_db", "shoping_db");
+    $conn = mysqli_connect("bjwsqeyqnceuefhonbtn-mysql.services.clever-cloud.com", "uw73jydcez11n8fc", "qW2AINujY6DksIor1mtP", "bjwsqeyqnceuefhonbtn");
     $query2 = "select * from register_data where email='$email' and password='$password'";
     $result2 = mysqli_query($conn, $query2);
     $total = mysqli_num_rows($result2);
